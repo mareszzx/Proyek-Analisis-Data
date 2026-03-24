@@ -19,6 +19,18 @@ sns.set(style='whitegrid')
 
 # --- HELPER FUNCTIONS ---
 
+# Di dalam dashboard.py
+import pandas as pd
+import streamlit as st
+
+# Membaca data langsung dari file zip
+# Pastikan nama file di dalam zip adalah 'main_data.csv'
+try:
+    all_df = pd.read_csv("main_data.zip")
+except Exception as e:
+    # Jika gagal membaca zip, coba baca csv biasa (sebagai cadangan)
+    all_df = pd.read_csv("main_data.csv")
+
 def create_category_revenue_df(df):
     category_rev = df.groupby("product_category_name_english").agg({
         "order_id": "nunique",
