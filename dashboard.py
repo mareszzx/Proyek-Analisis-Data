@@ -19,6 +19,15 @@ sns.set(style='whitegrid')
 
 # --- HELPER FUNCTIONS ---
 
+# Jika file ada di dalam folder dashboard
+import os
+
+# Cara yang lebih aman untuk mendeteksi path di server
+base_dir = os.path.dirname(__file__)
+file_path = os.path.join(base_dir, "main_data.csv")
+
+all_df = pd.read_csv(file_path)
+
 def create_category_revenue_df(df):
     category_rev = df.groupby("product_category_name_english").agg({
         "order_id": "nunique",
