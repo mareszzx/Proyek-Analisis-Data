@@ -39,6 +39,7 @@ streamlit run dashboard/dashboard.py
 ```
 
 ## Struktur Proyek
+```plaintext
 .
 ├── dashboard/
 │   ├── dashboard.py       # Script utama Dashboard Streamlit
@@ -49,3 +50,4 @@ streamlit run dashboard/dashboard.py
 ├── README.md              # Dokumentasi proyek
 ├── requirements.txt       # Daftar library python yang dibutuhkan
 └── url.txt                # Tautan dashboard yang sudah di-deploy
+```
